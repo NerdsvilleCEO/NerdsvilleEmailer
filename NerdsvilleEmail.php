@@ -3,13 +3,11 @@ require_once "interfaces/NerdsvilleEmailInterface.php";
 
 class NerdsvilleEmailObject implements NerdsvilleEmail {
   /* Constructor Functions */
-  public function __construct($to, $from, $subject, $altBody){
+  public function __construct($to, $from, $subject, $altBody, $HTML=False){
     setInitialState($to, $from, $subject, $altBody);
-  }
-
-  public function __construct($to, $from, $subject, $altBody, $HTML){
-    setInitialState($to, $from, $subject, $altBody);
-    $this->HTML = $HTML;
+    if($HTML !== False){
+      $this->HTML = $HTML;
+    }
   }
 
   private function setInitialState($to, $from, $subject, $altBody){
@@ -36,8 +34,8 @@ class NerdsvilleEmailObject implements NerdsvilleEmail {
     $this->altBody = $altBody;
   }
 
-  public function setIsHTML($boolean=True){
-    $this->isHTML = $boolean;
+  public function setHTML($HTML){
+    $this->HTML = $HTML;
   }
 
   /* Email State Setters */
@@ -64,6 +62,10 @@ class NerdsvilleEmailObject implements NerdsvilleEmail {
 
   public function getAltBody(){
     return $this->altBody;
+  }
+
+  public function getHTML(){
+    return $this->getHTML();
   }
 
   /* Email State Getters */
