@@ -1,7 +1,7 @@
 <?php
 require_once "interfaces/NerdsvilleEmailInterface.php";
 
-class NerdsvilleEmailObject implements NerdsvilleEmail {
+class NerdsvilleEmail implements NerdsvilleEmailInterface {
   /* Constructor Functions */
   public function __construct($to, $from, $subject, $altBody, $HTML=False){
     setInitialState($to, $from, $subject, $altBody);
