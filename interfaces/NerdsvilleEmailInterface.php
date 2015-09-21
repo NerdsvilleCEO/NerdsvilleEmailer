@@ -1,6 +1,6 @@
 <?php
 
-interface NerdsvilleEmail {
+interface NerdsvilleEmailInterface {
   /* Constructor Functions */
     public function __construct($to, $from, $subject, $altBody, $HTML=False);
 
