@@ -5,9 +5,7 @@ class NerdsvilleEmail implements NerdsvilleEmailInterface {
   /* Constructor Functions */
   public function __construct($to, $from, $subject, $altBody, $HTML=False){
     setInitialState($to, $from, $subject, $altBody);
-    if($HTML !== False){
-      $this->HTML = $HTML;
-    }
+    $this->HTML = $HTML;
   }
 
   private function setInitialState($to, $from, $subject, $altBody){
